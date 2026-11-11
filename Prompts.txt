@@ -1,0 +1,118 @@
+HOW TO CREATE MINECRAFT MODS WITH AI
+By DaSbro Tutorial
+
+This is the workflow shown in the video:
+
+1. Briefly describe your mod idea to the AI.
+2. Ask it to write a detailed development prompt.
+3. Read the generated prompt and request any changes you want.
+4. Send the finished prompt back to the AI and ask it to build the mod.
+
+You can use the examples below as your first message.
+The versions listed here match the video. Ask the AI to verify their availability and use the correct APIs before building.
+
+========================================
+1. SWAP BOW
+========================================
+
+Copy and send this message:
+
+I want to create a Minecraft mod that adds a special bow called the Swap Bow.
+
+When its arrow hits a living mob or another player, the shooter and the target instantly swap positions.
+
+The crafting recipe should be:
+
+Top row: empty, stick, string.
+Middle row: stick, Ender Pearl, string.
+Bottom row: empty, stick, string.
+
+Give the bow a Minecraft-style appearance with purple and teal accents, including its inventory model and charging animations.
+
+Keep normal bow charging, arrows, and durability. Swap arrows should not damage their targets and should disappear after impact.
+
+Add teleport particles, an Enderman teleport sound at both locations, and a three-second cooldown after a successful swap. Arrows already in flight must also respect this cooldown.
+
+Cancel the swap if either destination would trap an entity inside blocks or fall outside valid world boundaries. Handle unavailable entities safely, only allow swaps within the same dimension, and skip entities riding or carrying passengers.
+
+Make the item available through crafting and in the Creative Combat tab.
+
+Use these development versions:
+- Minecraft Java Edition 26.2
+- Fabric Loader 0.20.1
+- Fabric API 0.161.0+26.2
+- Java 25
+- Fabric Loom 1.17.21
+- Gradle 9.5.1
+
+Write a detailed prompt I can send back to you to build this mod.
+
+Include instructions to verify dependencies and APIs using official sources, create the complete project, compile it, fix build errors, and provide the installable JAR with installation instructions.
+
+Clearly distinguish compilation and automated checks from testing inside Minecraft.
+
+Do not build it yet. Just give me the prompt.
+
+========================================
+2. VILLAGER REACTIONS
+========================================
+
+Copy and send this message:
+
+I want to create a Minecraft mod called Villager Reactions.
+
+When a player kills a villager, nearby adult villagers gather around the player and start judging them with dramatic spoken dialogue and matching chat messages.
+
+Detect witnesses within 24 blocks of the killed villager. Make them walk toward the player and stop a few blocks away.
+
+They should speak one at a time so the recordings do not overlap. Identify the speaking villager in chat, randomly select lines, and avoid repeating the same line during an event.
+
+Example dialogue:
+- "No! He was a good man!"
+- "He had a family and ten children!"
+- "How could you?! That was my husband!"
+- "He only went outside to trade!"
+- "Who's going to pay his mortgage now?"
+
+I will provide custom voice recordings. The mod should match each recording to its chat message and leave enough time for it to finish before the next villager speaks.
+
+If a recording is missing, its line should still appear in chat without missing-audio errors.
+
+After the reactions finish, villagers should return to their normal behavior. Further kills during an active event should not start overlapping sequences.
+
+Handle the player's death, disconnection, or dimension change safely, and release participating villagers when an event ends.
+
+Use these development versions:
+- Minecraft Java Edition 26.2
+- Fabric Loader 0.20.1
+- Fabric API 0.161.0+26.2
+- Java 25
+- Fabric Loom 1.17.21
+- Gradle 9.5.1
+
+Build this as a separate project from Swap Bow so both mods can be installed together.
+
+Write a detailed prompt I can send back to you to build this mod.
+
+Include instructions to verify dependencies and APIs using official sources, create the complete project, integrate supplied recordings, compile it, fix build errors, and provide the installable JAR with installation instructions.
+
+Explain where audio files belong and how to add or replace them.
+
+Clearly distinguish compilation and automated checks from testing inside Minecraft.
+
+Do not build it yet. Just give me the prompt.
+
+========================================
+AFTER THE AI WRITES YOUR PROMPT
+========================================
+
+Read it and check that it describes the mod you want.
+
+Once you are satisfied, send the generated prompt back with:
+"Build the mod using this prompt."
+
+For Villager Reactions, attach your recordings at this stage or provide their file paths if your AI assistant can access local files.
+
+Use an AI coding assistant with workspace access to create and compile the project.
+
+If you encounter an error, send the full error message back to the AI so it can investigate.
